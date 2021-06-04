@@ -76,3 +76,6 @@
     7. Счёт на оплату выставлен абоненту
     8. Счёт оплачен
     9. Счёт просрочен
+
+# User story map
+https://miro.com/app/board/o9J_lGSEKgk=/

@@ -23,18 +23,10 @@ public class HelloControllerTest {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    public void shouldReturn200WhenSendingRequestToController() {
-        ResponseEntity<String> entity = this.testRestTemplate
-                .getForEntity("http://localhost:" + this.port + "/hello", String.class);
-
-        then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
-    }
-
-    @Test
     public void shouldReturnHelloWhenSendingRequestToController() {
         ResponseEntity<String> entity = this.testRestTemplate
-                .getForEntity("http://localhost:" + this.port + "/hello", String.class);
-
-        then(entity.getBody()).isEqualTo("Hello!");
+                .getForEntity("http://localhost:" + this.port, String.class);
+        then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        then(entity.getBody()).isEqualTo("{\"message\":\"Hello!\"}");
     }
 }

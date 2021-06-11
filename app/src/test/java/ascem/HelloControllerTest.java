@@ -25,7 +25,7 @@ public class HelloControllerTest {
     @Test
     public void shouldReturnHelloWhenSendingRequestToController() {
         ResponseEntity<String> entity = this.testRestTemplate
-                .getForEntity("http://localhost:" + this.port + "/hello", String.class);
+                .getForEntity("http://localhost:" + this.port, String.class);
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
         then(entity.getBody()).isEqualTo("{\"message\":\"Hello!\"}");
     }

@@ -8,7 +8,7 @@ if [ -z "$1" ]
   imageTag=latest
 fi
 
-repositoryName=
+repositoryName=001658081882.dkr.ecr.us-east-2.amazonaws.com
 imageFullName=$repositoryName:$imageTag
 
 echo [Main App STARTING] pushing image $imageFullName...

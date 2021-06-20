@@ -5,6 +5,16 @@
  * For more details take a look at the 'Building Java & JVM projects' chapter in the Gradle
  * User Manual available at https://docs.gradle.org/7.0.2/userguide/building_java_projects.html
  */
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:4.7.1"
+    }
+}
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
@@ -12,6 +22,7 @@ plugins {
     id 'org.springframework.boot' version '2.4.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id "com.github.spotbugs" version "4.7.1"
 }
 
 group = 'ascem'
@@ -35,5 +46,7 @@ test {
 
 application {
     // Define the main class for the application.
-    mainClass = 'ascem.AscemApp'
+    mainClass = 'ascem.AscemApp' as Property<String>
 }
+
+apply plugin: "com.github.spotbugs"

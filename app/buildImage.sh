@@ -8,12 +8,9 @@ if [ -z "$1" ]
   imageTag=latest
 fi
 
-repositoryName=001658081882.dkr.ecr.us-east-2.amazonaws.com
+repositoryName=001658081882.dkr.ecr.us-east-2.amazonaws.com/ascem
 imageFullName=$repositoryName:$imageTag
 
-echo repository $repositoryName
-echo image $imageTag
-echo fullName $imageFullName
 echo [Main App STARTING] building $imageFullName ...
 
 echo [Main App] craeting jar ...

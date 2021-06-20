@@ -46,7 +46,7 @@ test {
 
 application {
     // Define the main class for the application.
-    mainClass = 'ascem.AscemApp' as Property<String>
+    mainClass = 'ascem.AscemApp'
 }
 
 apply plugin: "com.github.spotbugs"

@@ -14,8 +14,8 @@ plugins {
     id 'java'
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+group = 'ascem'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
@@ -35,5 +35,5 @@ test {
 
 application {
     // Define the main class for the application.
-    mainClass = 'ascem.App'
+    mainClass = 'ascem.AscemApp'
 }

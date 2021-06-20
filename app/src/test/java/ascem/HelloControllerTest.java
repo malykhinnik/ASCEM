@@ -27,6 +27,6 @@ public class HelloControllerTest {
         ResponseEntity<String> entity = this.testRestTemplate
                 .getForEntity("http://localhost:" + this.port, String.class);
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
-        then(entity.getBody()).isEqualTo("{\"message\":\"Hello!\"}");
+        then(entity.getBody()).isEqualTo("{\"message\":\"Hello! v2\"}");
     }
 }

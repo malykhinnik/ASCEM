@@ -49,7 +49,7 @@ test {
 
 application {
     // Define the main class for the application.
-    mainClass = 'ascem.AscemApp'
+    mainClass = 'ascem.App'
 }
 
 apply plugin: "com.github.spotbugs"

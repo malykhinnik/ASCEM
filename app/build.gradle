@@ -23,6 +23,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "com.github.spotbugs" version "4.7.1"
+    id 'jacoco'
 }
 
 group = 'ascem'
@@ -42,6 +43,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+    finalizedBy jacocoTestCoverageVerification
 }
 
 application {
@@ -50,3 +53,29 @@ application {
 }
 
 apply plugin: "com.github.spotbugs"
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.5
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.3
+            }
+        }
+    }
+}

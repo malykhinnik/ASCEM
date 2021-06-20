@@ -15,7 +15,7 @@ plugins {
 }
 
 group = 'ascem'
-version = '0.0.2-SNAPSHOT'
+version = '0.0.3-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
